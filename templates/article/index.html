@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} Главная страница{% endblock %}
+
+{% block content %}
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Последние новости</h1>
+        <p class="lead text-muted">Здесь находятся последние статьи опубликованные на сайте. Вы можете отслеживать их именно тут.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+  <form action="{% url 'index' %}">
+      <div class="input-group">
+        <input type="search" class="form-control" placeholder="Название статьи" aria-label="Search" name="search">
+      </div>
+  </form>
+      <br>
+
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for item in page_obj %}
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ item.image.url }}" width="100%" height="225">
+
+            <div class="card-body">
+
+              <p class="card-text">    {{ item.name }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'article' item.id %}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                </div>
+                <small class="text-muted">{{ item.created }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  {% endfor %}
+      </div>
+      <br>
+              {% if page_obj.has_previous %}
+            <a href="?page=1" class="btn btn-outline-primary">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary">{{ page_obj.previous_page_number }}</a>
+            <a href="" class="btn btn-outline-info">{{ page_obj.number }}</a>
+        {% else %}
+
+            <a href="" class="btn btn-outline-info">1</a>
+        {% endif %}
+
+
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">{{ page_obj.next_page_number }}</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-primary">last &raquo;</a>
+        {% endif %}
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
