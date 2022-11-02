@@ -19,6 +19,13 @@
 <h3> запуск проекта </h3>
 
 <code> 
+pip install -r venv venv
+</code>
+
+<br>
+<br>
+
+<code> 
 pip freeze > requirements.txt
 </code>
 
