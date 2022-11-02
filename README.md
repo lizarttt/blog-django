@@ -19,7 +19,7 @@
 <h3> запуск проекта </h3>
 
 <code> 
-env\scripts\activate
+pip freeze > requirements.txt
 </code>
 
 <br>
