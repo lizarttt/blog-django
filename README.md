@@ -19,7 +19,14 @@
 <h3> запуск проекта </h3>
 
 <code> 
-pip install -r venv venv
+python -m venv venv
+</code>
+
+<br>
+<br>
+
+<code> 
+venv\Scripts\activate.bat
 </code>
 
 <br>
