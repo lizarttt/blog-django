@@ -32,19 +32,6 @@ venv\Scripts\activate.bat
 <br>
 <br>
 
-<code> 
-pip freeze > requirements.txt
-</code>
-
-<br>
-<br>
-
-<code> 
-pip install -r requirements.txt
-</code>
-
-<br>
-<br>
 
 <code> 
 python manage.py makemigrations
