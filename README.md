@@ -16,7 +16,7 @@
 Сам из себя проект представляет мини-блог, он подойдет на любую тематику.
 
 
-<h3> запуск проекта </h3>
+<h3> запуск проекта на вин</h3>
 
 <code> 
 python -m venv venv
@@ -29,6 +29,11 @@ python -m venv venv
 venv\Scripts\activate.bat
 </code>
 
+<br>
+<br>
+
+
+<code>pip install -r requirements.txt </code>
 <br>
 <br>
 
